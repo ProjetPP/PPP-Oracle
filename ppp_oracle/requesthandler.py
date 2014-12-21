@@ -27,7 +27,7 @@ database = [
         R('http://github.com/ProjetPP/')),
 
         (T(R('I'), R('identity'), M()),
-        R('An nternaut.')),
+        R('An internaut.')),
 
         (S('P=NP?'),
         R('Maybe.')),
