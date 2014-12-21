@@ -14,6 +14,12 @@ database = [
         (T(R('you'), R('identity'), M()),
         R('A question-answering tool.')),
 
+        (T(R('your'), R('name'), M()),
+        R('Platypus.')),
+
+        (T(R('your'), R('creator'), M()),
+        R('Projet Pensées Profondes members.')),
+
         (T(R('your'), R('website'), M()),
         R('http://projetpp.github.io/')),
 
@@ -42,7 +48,16 @@ database = [
         R('Sorry, I don\'t remember what we said earlier.')),
 
         (S('no'),
-        R('Sorry, I don\'t remember what we said earlier.'))
+        R('Sorry, I don\'t remember what we said earlier.')),
+
+        (S('42'),
+        R('Answer to the Ultimate Question of Life, The Universe, and Everything.')),
+
+        (S('Answer to the Ultimate Question of Life The Universe and Everything'),
+        R('42')),
+
+        (T(R('love'), R('definition'), M()),
+        R('Baby don\'t hurt me.')) # https://www.youtube.com/watch?v=Ktbhw0v186Q
         ]
 
 
