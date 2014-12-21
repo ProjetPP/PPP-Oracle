@@ -12,7 +12,13 @@ from ppp_libmodule.exceptions import ClientError
 
 database = [
         (T(R('you'), R('identity'), M()),
-        R('Question-answering tool')),
+        R('A question-answering tool.')),
+
+        (T(R('your'), R('name'), M()),
+        R('Platypus.')),
+
+        (T(R('your'), R('creator'), M()),
+        R('Projet Pensées Profondes members.')),
 
         (T(R('your'), R('website'), M()),
         R('http://projetpp.github.io/')),
@@ -21,16 +27,16 @@ database = [
         R('http://github.com/ProjetPP/')),
 
         (T(R('I'), R('identity'), M()),
-        R('Internaut')),
+        R('An internaut.')),
 
         (S('P=NP?'),
-        R('maybe')),
+        R('Maybe.')),
 
         (S('NP=P?'),
-        R('maybe')),
+        R('Maybe.')),
 
         (T(R('I'), R('location'), M()),
-        R('Try looking around yourself, I can\'t help much')),
+        R('Try looking around yourself, I can\'t help much.')),
 
         (T(R('You'), R('location'), M()),
         R('askplatyp.us')),
@@ -42,7 +48,16 @@ database = [
         R('Sorry, I don\'t remember what we said earlier.')),
 
         (S('no'),
-        R('Sorry, I don\'t remember what we said earlier.'))
+        R('Sorry, I don\'t remember what we said earlier.')),
+
+        (S('42'),
+        R('Answer to the Ultimate Question of Life, The Universe, and Everything.')),
+
+        (S('Answer to the Ultimate Question of Life The Universe and Everything'),
+        R('42')),
+
+        (T(R('love'), R('definition'), M()),
+        R('Baby don\'t hurt me.')) # https://www.youtube.com/watch?v=Ktbhw0v186Q
         ]
 
 
