@@ -14,6 +14,12 @@ database = [
         (T(R('you'), R('identity'), M()),
         R('Question-answering tool')),
 
+        (T(R('your'), R('website'), M()),
+        R('http://projetpp.github.io/')),
+
+        (T(T(R('your'), R('source code'), M()), R('location'), M()),
+        R('http://github.com/ProjetPP/')),
+
         (T(R('I'), R('identity'), M()),
         R('Internaut')),
 
