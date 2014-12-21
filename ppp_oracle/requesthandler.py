@@ -12,7 +12,7 @@ from ppp_libmodule.exceptions import ClientError
 
 database = [
         (T(R('you'), R('identity'), M()),
-        R('Question-answering tool')),
+        R('A question-answering tool.')),
 
         (T(R('your'), R('website'), M()),
         R('http://projetpp.github.io/')),
@@ -21,16 +21,16 @@ database = [
         R('http://github.com/ProjetPP/')),
 
         (T(R('I'), R('identity'), M()),
-        R('Internaut')),
+        R('An nternaut.')),
 
         (S('P=NP?'),
-        R('maybe')),
+        R('Maybe.')),
 
         (S('NP=P?'),
-        R('maybe')),
+        R('Maybe.')),
 
         (T(R('I'), R('location'), M()),
-        R('Try looking around yourself, I can\'t help much')),
+        R('Try looking around yourself, I can\'t help much.')),
 
         (T(R('You'), R('location'), M()),
         R('askplatyp.us')),
