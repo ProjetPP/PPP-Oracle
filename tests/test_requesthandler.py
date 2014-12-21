@@ -17,7 +17,7 @@ class RequestHandlerTest(PPPTestCase(app)):
         answers = self.request(q)
         self.assertEqual(len(answers), 1, answers)
         answer = answers[0].tree
-        self.assertEqual(answer, Resource('Question-answering tool'))
+        self.assertEqual(answer, Resource('A question-answering tool.'))
 
     def testPEqNp(self):
         t = {'type': 'sentence', 'value': 'P=NP?'}
@@ -26,4 +26,4 @@ class RequestHandlerTest(PPPTestCase(app)):
         answers = self.request(q)
         self.assertEqual(len(answers), 1, answers)
         answer = answers[0].tree
-        self.assertEqual(answer, Resource('maybe'))
+        self.assertEqual(answer, Resource('Maybe.'))

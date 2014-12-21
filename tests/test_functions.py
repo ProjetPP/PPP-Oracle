@@ -32,11 +32,11 @@ class FunctionsTest(TestCase):
                          None)
     def testSelect(self):
         self.assertEqual(select(T(R('you'), R('identity'), M())),
-                         R('Question-answering tool'))
+                         R('A question-answering tool.'))
         self.assertEqual(select(T(R('You'), R('identity'), M())),
-                         R('Question-answering tool'))
+                         R('A question-answering tool.'))
         self.assertEqual(select(T(R('I'), R('identity'), M())),
-                         R('Internaut'))
+                         R('An nternaut.'))
         self.assertEqual(select(T(T(R('your'), R('source code'), M()), R('location'), M())),
                          R('http://github.com/ProjetPP/'))
 
