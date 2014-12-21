@@ -37,4 +37,6 @@ class FunctionsTest(TestCase):
                          R('Question-answering tool'))
         self.assertEqual(select(T(R('I'), R('identity'), M())),
                          R('Internaut'))
+        self.assertEqual(select(T(T(R('your'), R('source code'), M()), R('location'), M())),
+                         R('http://github.com/ProjetPP/'))
 

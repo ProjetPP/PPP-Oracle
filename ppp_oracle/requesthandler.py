@@ -49,6 +49,8 @@ database = [
 def eq(left, right):
     if left.type != right.type:
         return False
+    elif isinstance(left, M):
+        return True
     elif isinstance(left, R):
         return left.value.lower() == right.value.lower()
     elif isinstance(left, T):
@@ -63,24 +65,7 @@ def answer(pattern, tree):
     if isinstance(pattern, M):
         return tree[1]
     elif eq(pattern, tree[0]):
-        return R('yes')
-    elif isinstance(pattern, T) and isinstance(tree[0], T):
-        # Is there a subtree of the triple that is a missing?
-        # I yes, just return what should be there
-        if isinstance(pattern.subject, M) and \
-                eq(pattern.predicate, tree[0].predicate) and \
-                eq(pattern.object, tree[0].object):
-            return tree[1]
-        elif isinstance(pattern.object, M) and \
-                eq(pattern.predicate, tree[0].predicate) and \
-                eq(pattern.subject, tree[0].subject):
-            return tree[1]
-        elif isinstance(pattern.predicate, M) and \
-                eq(pattern.subject, tree[0].subject) and \
-                eq(pattern.object, tree[0].object):
-            return tree[1]
-        else:
-            return None
+        return tree[1]
     elif isinstance(pattern, S) and isinstance(tree[0], S) and \
             pattern.value.lower().strip(' ?.!') == tree[0].value.lower().strip(' ?.!'):
         return tree[1]
