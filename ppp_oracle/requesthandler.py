@@ -61,7 +61,7 @@ database = [
         ]
 
 
-def eq(left, right):
+def eq(left, right, test_reverse=True):
     if left.type != right.type:
         return False
     elif isinstance(left, M):
@@ -69,9 +69,25 @@ def eq(left, right):
     elif isinstance(left, R):
         return left.value.lower() == right.value.lower()
     elif isinstance(left, T):
-        return eq(left.subject, right.subject) and \
-                eq(left.predicate, right.predicate) and \
-                eq(left.object, right.object)
+        # Is there any equal predicate?
+        pred_eq = (
+                any(eq(x, y)
+                    for x in left.predicate_set
+                    for y in right.predicate_set) or
+                any(eq(x, y)
+                    for x in left.inverse_predicate_set
+                    for y in right.inverse_predicate_set))
+        if (pred_eq and eq(left.subject, right.subject) and \
+                eq(left.object, right.object)):
+            return True
+        if test_reverse:
+            return (eq(T(left.object, left.inverse_predicate, left.subject),
+                       right,
+                       test_reverse=False) or
+                    eq(left,
+                       T(right.object, right.inverse_predicate, right.subject),
+                       test_reverse=False))
+        return False
     else:
         # TODO
         return False

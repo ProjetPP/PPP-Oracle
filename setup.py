@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ppp_oracle',
-    version='0.1.2',
+    version='0.1.3',
     description='A module that answers hardcoded questions.',
     url='https://github.com/ProjetPP',
     author='Valentin Lorentz',
@@ -24,7 +24,7 @@ setup(
         'Topic :: Software Development :: Libraries',
     ],
     install_requires=[
-        'ppp_datamodel>=0.5',
+        'ppp_datamodel>=0.6.8',
         'ppp_libmodule>=0.6',
     ],
     packages=[

@@ -19,6 +19,22 @@ class RequestHandlerTest(PPPTestCase(app)):
         answer = answers[0].tree
         self.assertEqual(answer, Resource('A question-answering tool.'))
 
+    def testWhoAreYouList(self):
+        t = {'type': 'triple',
+             'subject': {'type': 'resource', 'value': 'you'},
+             'predicate': {'type': 'list', 'list': [
+                 {'type': 'resource', 'value': 'identity'},
+                 {'type': 'resource', 'value': 'foobar'},
+                 ]},
+             'object': {'type': 'missing'}}
+        q = {'id': '1', 'language': 'en', 'measures': {}, 'trace': [],
+             'tree': t}
+        answers = self.request(q)
+        self.assertEqual(len(answers), 1, answers)
+        answer = answers[0].tree
+        self.assertEqual(answer, Resource('A question-answering tool.'))
+
+
     def testPEqNp(self):
         t = {'type': 'sentence', 'value': 'P=NP?'}
         q = {'id': '1', 'language': 'en', 'measures': {}, 'trace': [],
